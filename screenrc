@@ -1,0 +1,39 @@
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{+b m}(%{W}%n*%f%t%?(%u)%?%{m})%{-b w}%?%+Lw%?%?%= %{g}][%{c} %D %M %d %{g}%c %{g}]'
+caption string '%n%?%F%{= Rk}*%: %?%t'
+defscrollback 10000
+bind ( eval "writebuf" "exec sh -c 'pbcopy < /tmp/screen-exchange'"
+bind ) eval "exec sh -c 'pbpaste > /tmp/screen-exchange'"
+
+#As above, but for X
+#bind ( eval writebuf "exec sh -c 'xsel -nbi </tmp/screen-exchange'"
+#bind ) eval "exec sh -c 'xsel -bo >/tmp/screen-exchange'"
+
+bind h focus left
+bind ^h focus left
+bind l focus right
+bind ^l focus right
+bind k focus up
+bind ^k focus up
+bind j focus down
+bind ^j focus down
+
+bind -c ktlayout c layout new
+bind -c ktlayout ^c layout new
+bind -c ktlayout \' layout select
+bind -c ktlayout \" layout show
+bind -c ktlayout p layout prev
+bind -c ktlayout ^p layout prev
+bind -c ktlayout n layout next
+bind -c ktlayout ^n layout next
+bind -c ktlayout 0 layout select 0
+bind -c ktlayout 1 layout select 1
+bind -c ktlayout 2 layout select 2
+bind -c ktlayout 3 layout select 3
+bind -c ktlayout 4 layout select 4
+bind -c ktlayout 5 layout select 5
+bind -c ktlayout 6 layout select 6
+bind -c ktlayout 7 layout select 7
+bind -c ktlayout 8 layout select 8
+bind -c ktlayout 9 layout select 9
+bind i command -c ktlayout
